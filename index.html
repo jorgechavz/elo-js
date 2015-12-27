@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ELO</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="row top">
+        <h1>ELO <span>Rating System in JavaScript</span></h1>
+        <div class="k">
+          K-factor: <span id="k-factor">16</span>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="row">
+        <div class="wrapper">
+          <div class="block" id="playerA">
+            <h3>Player 1</h3>
+            <div class="val">
+              <span>Rating: </span><div id="ratingA"></div>
+            </div>
+            <div class="val">
+              <span>Score: </span><div id="scoreA"></div>
+            </div>
+            <div class="val">
+              <span>Expected: </span><div id="expectedA"></div>
+            </div>
+            <div class="val">
+              <span>New rating: </span><div id="newRatingA"></div>
+            </div>
+
+          </div>
+          <div class="block" id="playerB">
+            <h3>Player 2</h3>
+            <div class="val">
+              <span>Rating: </span><div id="ratingB"></div>
+            </div>
+            <div class="val">
+              <span>Score: </span><div id="scoreB"></div>
+            </div>
+            <div class="val">
+              <span>Expected: </span><div id="expectedB"></div>
+            </div>
+            <div class="val">
+              <span>New rating: </span><div id="newRatingB"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="row bottom">
+        <span>Author: <a href="https://github.com/jorgechavz">Jorge Chavez</a></span>
+      </div>
+    </footer>
+
+    <!-- Import elo.js -->
+    <script type="text/javascript" src="src/elo.js"></script>
+
+    <!-- Testing the library -->
+    <script type="text/javascript">
+      var player  = new Elo(17, 33, 2, 1);
+      console.log(player);
+
+      document.getElementById("k-factor").innerHTML = player.kfactor;
+
+      //Player A
+      document.getElementById("ratingA").innerHTML = player.ratingA;
+      document.getElementById("scoreA").innerHTML = player.scoreA;
+      document.getElementById("expectedA").innerHTML = player.expectedA;
+      document.getElementById("newRatingA").innerHTML = player.newRatingA;
+
+      //Player B
+      document.getElementById("ratingB").innerHTML = player.ratingB;
+      document.getElementById("scoreB").innerHTML = player.scoreB;
+      document.getElementById("expectedB").innerHTML = player.expectedB;
+      document.getElementById("newRatingB").innerHTML = player.newRatingB;
+
+    </script>
+
+  </body>
+</html>
